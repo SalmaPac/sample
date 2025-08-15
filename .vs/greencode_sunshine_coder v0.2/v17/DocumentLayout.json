@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\greenRules.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\greenRules.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\greenCode.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\greenCode.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\config.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\config.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "config.py",
+              "DocumentMoniker": "d:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\config.py",
+              "RelativeDocumentMoniker": "app\\config.py",
+              "ToolTip": "d:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\config.py",
+              "RelativeToolTip": "app\\config.py",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwCAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-08-15T11:46:39.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "greenRules.py",
+              "DocumentMoniker": "D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\greenRules.py",
+              "RelativeDocumentMoniker": "app\\greenRules.py",
+              "ToolTip": "D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\greenRules.py",
+              "RelativeToolTip": "app\\greenRules.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-08-15T11:46:30.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "greenCode.py",
+              "DocumentMoniker": "D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\greenCode.py",
+              "RelativeDocumentMoniker": "app\\greenCode.py",
+              "ToolTip": "D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\greenCode.py",
+              "RelativeToolTip": "app\\greenCode.py",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAmwGwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-08-15T11:38:20.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\Dockerfile",
+              "RelativeDocumentMoniker": "app\\Dockerfile",
+              "ToolTip": "D:\\Green-Code-Local\\sp-code\\greencode_sunshine_coder v0.2\\app\\Dockerfile",
+              "RelativeToolTip": "app\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-15T11:37:53.022Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

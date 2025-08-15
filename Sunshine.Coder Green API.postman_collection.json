@@ -1,0 +1,743 @@
+{
+	"info": {
+		"_postman_id": "183beea6-0520-4e76-8802-b8f869981d5d",
+		"name": "Sunshine.Coder Green API",
+		"description": "# 📄 Get started here\n\nThis template contains a boilerplate for documentation that you can quickly customize and reuse.\n\n## 🔖 How to use this template\n\n- Replace the content given brackets (()) with your API's details.\n- Tips are formatted in `codespan` - feel free to read and remove them.\n    \n\n---\n\n`Start with a brief overview of what your API offers.`\n\nThe ((product name)) provides many API products, tools, and resources that enable you to ((add product value here)).\n\n`You can also list the APIs you offer, link to the relevant pages, or do both in this section.`\n\n## **Getting started guide**\n\n`List the steps or points required to start using your APIs. Make sure to cover everything required to reach success with your API as quickly as possible.`\n\nTo start using the ((add APIs here)), you need to -\n\n`The points given below are from The Postman API's documentation. You can reference it to write your own getting started guide.`\n\n- You must use a valid API Key to send requests to the API endpoints. You can get your API key from Postman's [integrations dashboard](https://go.postman.co/settings/me/api-keys).\n- The API has [rate and usage limits](https://learning.postman.com/docs/developer/postman-api/postman-api-rate-limits/).\n- The API only responds to HTTPS-secured communications. Any requests sent via HTTP return an HTTP 301 redirect to the corresponding HTTPS resources.\n- The API returns request responses in JSON format. When an API request returns an error, it is sent in the JSON response as an error key.\n    \n\n## Authentication\n\n`Add details on the authorization keys/tokens required, steps that cover how to get them, and the relevant error codes.`\n\nThe ((product name)) API uses ((add your API's authorization type)) for authentication.\n\n`The details given below are from the Postman API's documentation. You can reference it to write your own authentication section.`\n\nPostman uses API keys for authentication. You can generate a Postman API key in the [API keys](https://postman.postman.co/settings/me/api-keys) section of your Postman account settings.\n\nYou must include an API key in each request to the Postman API with the X-Api-Key request header.\n\n### Authentication error response\n\nIf an API key is missing, malformed, or invalid, you will receive an HTTP 401 Unauthorized response code.\n\n## Rate and usage limits\n\n`Use this section to cover your APIs' terms of use. Include API limits, constraints, and relevant error codes, so consumers understand the permitted API usage and practices.`\n\n`The example given below is from The Postman API's documentation. Use it as a reference to write your APIs' terms of use.`\n\nAPI access rate limits apply at a per-API key basis in unit time. The limit is 300 requests per minute. Also, depending on your plan, you may have usage limits. If you exceed either limit, your request will return an HTTP 429 Too Many Requests status code.\n\nEach API response returns the following set of headers to help you identify your use status:\n\n| Header | Description |\n| --- | --- |\n| `X-RateLimit-Limit` | The maximum number of requests that the consumer is permitted to make per minute. |\n| `X-RateLimit-Remaining` | The number of requests remaining in the current rate limit window. |\n| `X-RateLimit-Reset` | The time at which the current rate limit window resets in UTC epoch seconds. |\n\n### 503 response\n\nAn HTTP `503` response from our servers indicates there is an unexpected spike in API access traffic. The server is usually operational within the next five minutes. If the outage persists or you receive any other form of an HTTP `5XX` error, [contact support](https://support.postman.com/hc/en-us/requests/new/).\n\n### **Need some help?**\n\n`Add links that customers can refer to whenever they need help.`\n\nIn case you have questions, go through our tutorials ((link to your video or help documentation here)). Or visit our FAQ page ((link to the relevant page)).\n\nOr you can check out our community forum, there’s a good chance our community has an answer for you. Visit our developer forum ((link to developer forum)) to review topics, ask questions, and learn from others.\n\n`You can also document or add links to libraries, code examples, and other resources needed to make a request.`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22676919"
+	},
+	"item": [
+		{
+			"name": "Collections",
+			"item": [
+				{
+					"name": "Check code snippet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"{{collectionName}}\",\n            \"schema\": \"{{collectionSchemaUrl}}\"\n        },\n        \"item\": [\n            {\n                \"request\": {}\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/checkCode",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"checkCode"
+							],
+							"query": [
+								{
+									"key": "workspace",
+									"value": "{{workspaceId}}",
+									"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Creates a collection using the [Postman Collection v2 schema format](https://schema.postman.com/json/collection/v2.1.0/docs/index.html). Include a `collection` object in the request body that contains the following required properties:\n\n*   `info` — An **object** that contains the following properties:\n    *   `name` — A **string** value that contains the collection's name.\n    *   `schema` — A **string** that contains a URL to the collection's schema. For example, the `https://schema.getpostman.com/collection/v1` URL.\n*   `item` — An **object** that contains the HTTP request and response information.\n    *   `request` — An **object** that contains the collection's request information. For a complete list of values, refer to the `definitions.request` entry in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json). If you pass an empty object for this value, the system defaults to an untitled GET request.\n\n**Note:**\n\n*   For a complete list of available property values for this endpoint, use the following references available in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json):\n    *   `info` object — Use the `definitions.info` entry.\n    *   `item` object — Use the `definitions.items` entry.\n*   For all other possible values, refer to the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json)."
+					},
+					"response": [
+						{
+							"name": "Successful Response - Python",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"import time\\nimport requests\\n\\ndef process_large_dataset(data_urls):\\n    # Process a list of data URLs inefficiently\\n    all_data = []\\n    \\n    # Inefficient: Making individual requests in a loop\\n    for url in data_urls:\\n        # No error handling\\n        response = requests.get(url)\\n        data = response.json()\\n        \\n        # CPU-intensive operation on each item\\n        processed = [complex_calculation(item) for item in data]\\n        \\n        # Appending to list inefficiently\\n        all_data = all_data + processed\\n    \\n    return all_data\\n\\ndef complex_calculation(item):\\n    # Simulate an expensive calculation\\n    result = item\\n    for i in range(1000):\\n        result = (result * i) / (i + 1) + result\\n        time.sleep(0.001)  # Unnecessary delay\\n    \\n    return result\\n\\n# No caching mechanism\\n# No resource cleanup\\n# No optimized data structures\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/checkCode",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"checkCode"
+									],
+									"query": [
+										{
+											"key": "workspace",
+											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "# Code structure and methods\n\n## Summary of Rules Violated\n1. **GCI1**: Calling Spring repositories inside loops or streams to reduce CPU and energy consumption.\n2. **CRJVM206**: Avoiding the N+1 selects problem by batching queries or using joins.\n3. **GCI71**: Performing SQL queries outside loops to optimize database operations.\n4. **GCI22**: Using basic operations directly instead of methods to save resources.\n5. **GCI27**: Using `system.arraycopy` for efficient array copying.\n6. **GCI28**: Optimizing read file exceptions to handle errors gracefully.\n7. **GCI35**: Using logical tests instead of `try...catch` for `FileNotFoundException` to save CPU cycles.\n8. **GCI66**: Using single quotes for strings without variables to reduce CPU cycles.\n9. **GCI67**: Using `++$i` instead of `$i++` for faster iteration.\n10. **GCI69**: Avoiding calling loop invariant functions in loop conditions to save CPU cycles.\n11. **GCI75**: Using `StringBuilder` instead of string concatenation in loops to save resources.\n12. **GCI76**: Avoiding static collections to prevent memory leaks.\n13. **GCI77**: Using `Pattern.compile()` in static contexts to optimize performance.\n14. **GCI78**: Including const parameters in the query instead of setting them in batch updates.\n15. **GCI79**: Implementing `try-with-resources` for `AutoCloseable` objects to free resources.\n16. **GCI81**: Specifying struct layouts to optimize memory usage.\n17. **GCI82**: Declaring variables as constants when they are not reassigned.\n18. **GCI83**: Replacing `Enum.ToString()` with `nameof` for better performance.\n19. **GCI84**: Using `async Task` methods instead of `async void` for performance, stability, and testability.\n20. **GCI85**: Sealing types that don't need inheritance to improve performance.\n21. **GCI86**: Avoiding calling `GC.Collect` to prevent unnecessary overhead.\n22. **GCI87**: Using collection indexers instead of LINQ for efficient access.\n23. **GCI88**: Disposing resources asynchronously for better performance.\n24. **GCI89**: Limiting function cache size to prevent storing unlimited data.\n25. **GCI90**: Using `Cast` instead of `Select` for casting collections.\n26. **GCI91**: Using `Where` before `OrderBy` to filter elements first.\n27. **GCI92**: Using `string.Length` to check if a string is empty for better performance.\n28. **GCI93**: Considering returning a `Task` directly instead of a single `await`.\n\n### Corrected Code Snippet\n```python\nimport time\nimport requests\n\ndef process_large_dataset(data_urls):\n# Process a list of data URLs efficiently\nall_data = []\n\n# Efficient: Making batch requests\nresponses = requests.get(data_urls)\nfor response in responses:\ndata = response.json()\n\n# CPU-intensive operation on each item\nprocessed = [complex_calculation(item) for item in data]\n\n# Appending to list efficiently\nall_data.extend(processed)\n\nreturn all_data\n\ndef complex_calculation(item):\n# Simulate an expensive calculation\nresult = item\nfor i in range(1000):\nresult = (result * i) / (i + 1) + result\n# Removed unnecessary delay\npass\n\nreturn result\n```\n\n### Explanation of Corrections\n1. **GCI1**: The code now makes batch requests instead of individual requests in a loop.\n2. **CRJVM206**: The N+1 selects problem is avoided by making batch requests.\n3. **GCI71**: SQL queries are not involved in this code, so no changes needed.\n4. **GCI22**: Basic operations like `extend` are used directly instead of concatenation.\n5. **GCI27**: Not applicable in Python.\n6. **GCI28**: Not applicable in Python.\n7. **GCI35**: Not applicable in Python.\n8. **GCI66**: Not applicable in Python.\n9. **GCI67**: Not applicable in Python.\n10. **GCI69**: Not applicable in Python.\n11. **GCI75**: Not applicable in Python.\n12. **GCI76**: Not applicable in Python.\n13. **GCI77**: Not applicable in Python.\n14. **GCI78**: Not applicable in Python.\n15. **GCI79**: Not applicable in Python.\n16. **GCI81**: Not applicable in Python.\n17. **GCI82**: Not applicable in Python.\n18. **GCI83**: Not applicable in Python.\n19. **GCI84**: Not applicable in Python.\n20. **GCI85**: Not applicable in Python.\n21. **GCI86**: Not applicable in Python.\n22. **GCI87**: Not applicable in Python.\n23. **GCI88**: Not applicable in Python.\n24. **GCI89**: Not applicable in Python.\n25. **GCI90**: Not applicable in Python.\n26. **GCI91**: Not applicable in Python.\n27. **GCI92**: Not applicable in Python.\n28. **GCI93**: Not applicable in Python.\n\nThis corrected code snippet addresses the inefficiencies in the original code by reducing the number of HTTP requests\nand optimizing list operations.\n```markdown\n\n\n\n\n\n```markdown\n# Runtime Optimizations\n\n## Summary of Rules Violated\n\n1. **GCI5**: The code uses `requests.get` in a loop without utilizing `preparedStatement`. This can lead to increased\nCPU and energy consumption.\n2. **GCI24**: The code does not limit the returned SQL results, which can cause excessive CPU and RAM usage.\n3. **GCI404**: The code uses list comprehensions instead of generator comprehensions, which can be more\nmemory-intensive.\n4. **GCI522**: The code does not override brightness settings to conserve battery life, but this rule is not applicable\nhere as it pertains to mobile applications.\n5. **GCI523**: The code does not use minimum time for geolocation, which is not relevant here as there is no geolocation\nfunctionality.\n6. **GCI530**: The code does not turn on the torch mode programmatically, which is not relevant here as there is no\ncamera functionality.\n7. **Avoid modifying the DOM during traversal**: The code does not modify the DOM, so this rule is not applicable.\n8. **Use logical property changes to make DOM elements invisible efficiently**: The code does not manipulate the DOM, so\nthis rule is not applicable.\n\n### Recommendations\n\n- Use `generator comprehensions` instead of `list comprehensions` to reduce memory usage.\n- Consider using a caching mechanism to avoid repeated requests to the same data URLs.\n- Implement resource cleanup after processing data.\n- Optimize data structures to handle large datasets more efficiently.\n- Remove unnecessary delays in the `complex_calculation` function to reduce CPU usage.\n\n## Corrected Code Snippet\n\n```python\nimport time\nimport requests\n\ndef process_large_dataset(data_urls):\n# Process a list of data URLs more efficiently\nall_data = []\n\n# Efficient: Using a set to cache processed URLs\nprocessed_urls = set()\n\nfor url in data_urls:\nif url in processed_urls:\ncontinue\n\n# No error handling\nresponse = requests.get(url)\ndata = response.json()\n\n# CPU-intensive operation on each item\nprocessed = (complex_calculation(item) for item in data)\n\n# Appending to list more efficiently\nall_data.extend(processed)\n\n# Cache the processed URL\nprocessed_urls.add(url)\n\nreturn all_data\n\ndef complex_calculation(item):\n# Simulate an expensive calculation\nresult = item\nfor i in range(1000):\nresult = (result * i) / (i + 1) + result\n\nreturn result\n```\n\n### Explanation of Changes\n\n1. **Generator Comprehensions**: Replaced list comprehensions with generator comprehensions to reduce memory usage.\n2. **Caching Mechanism**: Added a set `processed_urls` to cache processed URLs and avoid redundant requests.\n3. **Efficient List Extension**: Used `all_data.extend(processed)` instead of `all_data = all_data + processed` to\nappend items more efficiently.\n4. **Removed Unnecessary Delay**: Removed the `time.sleep(0.001)` call from the `complex_calculation` function to reduce\nCPU usage.\n# Storage and better db retrieval\n\n**Summary of Rules Violated:**\n- **CRJVM205 Use FetchType LAZY for collections on JPA entities to avoid loading unnecessary resources.**\n- The code does not involve JPA entities, so this rule is not applicable.\n- **CRJVM206 Avoid N+1 selects problem by batching queries or using joins.**\n- The code does not involve database queries, so this rule is not applicable.\n- **GCI24 Limit returned SQL results to reduce CPU and RAM usage.**\n- The code does not involve SQL queries, so this rule is not applicable.\n- **GCI72 Perform SQL queries outside loops to optimize database operations.**\n- The code does not involve SQL queries, so this rule is not applicable.\n- **GCI74 Specify fields in SQL queries instead of using SELECT * to improve performance.**\n- The code does not involve SQL queries, so this rule is not applicable.\n\n**Programmer's Actionable Feedback:**\n- The code currently makes individual HTTP requests within a loop, which can lead to inefficiencies and increased load\ntimes. To optimize this, consider using batch requests or parallel processing.\n- The `complex_calculation` function includes an unnecessary delay (`time.sleep(0.001)`), which can slow down the\noverall processing time. Remove this delay to improve performance.\n- There is no caching mechanism in place, which means that data might be fetched repeatedly if accessed multiple times.\nImplementing a caching strategy can reduce redundant network calls and improve efficiency.\n- Resource cleanup is not handled, such as closing network connections or managing memory. Ensure that resources are\nproperly managed to prevent leaks and improve stability.\n- No optimized data structures are used. Depending on the nature of the data, using more efficient data structures like\nsets or dictionaries could reduce processing time and memory usage.\n\n**Corrected Code Snippet:**\n```python\nimport time\nimport requests\nfrom concurrent.futures import ThreadPoolExecutor\n\ndef process_large_dataset(data_urls):\n# Process a list of data URLs efficiently\nall_data = []\n\n# Efficient: Using ThreadPoolExecutor to make batch requests in parallel\nwith ThreadPoolExecutor(max_workers=5) as executor:\nfutures = [executor.submit(requests.get, url) for url in data_urls]\nfor future in futures:\nresponse = future.result()\ndata = response.json()\n\n# CPU-intensive operation on each item\nprocessed = [complex_calculation(item) for item in data]\n\n# Appending to list efficiently\nall_data.extend(processed)\n\nreturn all_data\n\ndef complex_calculation(item):\n# Simulate an expensive calculation without unnecessary delay\nresult = item\nfor i in range(1000):\nresult = (result * i) / (i + 1) + result\n\nreturn result\n\n# No caching mechanism\n# No resource cleanup\n# No optimized data structures\n```\n```markdown\n:markdown\n# Storage and better db retrieval\n\n**Summary of Rules Violated:**\n- **CRJVM205 Use FetchType LAZY for collections on JPA entities to avoid loading unnecessary resources.**\n- The code does not involve JPA entities, so this rule is not applicable.\n- **CRJVM206 Avoid N+1 selects problem by batching queries or using joins.**\n- The code does not involve database queries, so this rule is not applicable.\n- **GCI24 Limit returned SQL results to reduce CPU and RAM usage.**\n- The code does not involve SQL queries, so this rule is not applicable.\n- **GCI72 Perform SQL queries outside loops to optimize database operations.**\n- The code does not involve SQL queries, so this rule is not applicable.\n- **GCI74 Specify fields in SQL queries instead of using SELECT * to improve performance.**\n- The code does not involve SQL queries, so this rule is not applicable.\n\n**Programmer's Actionable Feedback:**\n- The code currently makes individual HTTP requests within a loop, which can lead to inefficiencies and increased load\ntimes. To optimize this, consider using batch requests or parallel processing.\n- The `complex_calculation` function includes an unnecessary delay (`time.sleep(0.001)`), which can slow down the\noverall processing time. Remove this delay to improve performance.\n- There is no caching mechanism in place, which means that data might be fetched repeatedly if accessed multiple times.\nImplementing a caching strategy can reduce redundant network calls and improve efficiency.\n- Resource cleanup is not handled, such as closing network connections or managing memory. Ensure that resources are\nproperly managed to prevent leaks and improve stability.\n- No optimized data structures are used. Depending on the nature of the data, using more efficient data structures like\nsets or dictionaries could reduce processing time and memory usage.\n\n**Corrected Code Snippet:**\n```python\nimport time\nimport requests\nfrom concurrent.futures import ThreadPoolExecutor\n\ndef process_large_dataset(data_urls):\n# Process a list of data URLs efficiently\nall_data = []\n\n# Efficient: Using ThreadPoolExecutor to make batch requests in parallel\nwith ThreadPoolExecutor(max_workers=5) as executor:\nfutures = [executor.submit(requests.get, url) for url in data_urls]\nfor future in futures:\nresponse = future.result()\ndata = response.json()\n\n# CPU-intensive operation on each item\nprocessed = [complex_calculation(item) for item in data]\n\n# Appending to list efficiently\nall_data.extend(processed)\n\nreturn all_data\n\ndef complex_calculation(item):\n# Simulate an expensive calculation without unnecessary delay\nresult = item\nfor i in range(1000):\nresult = (result * i) / (i + 1) + result\n\nreturn result\n\n# No caching mechanism\n# No resource cleanup\n# No optimized data structures\n```\njson\n{\n\"response\": \"The provided code snippet does not contain any vector images, so it is not applicable to the rules GCI10\nand GCI203. The code can be improved by making the HTTP requests asynchronous to reduce latency, using a more efficient\nway to append data to lists, and adding error handling and caching mechanisms.\"\n}\n``` ```markdown\n# Efficiency Improvements\n\nThe provided code snippet can be significantly improved in terms of efficiency. Here are the key issues:\n\n1. **Inefficient HTTP Requests**: The code makes individual HTTP requests in a loop, which can be slow and inefficient.\nBy using asynchronous requests, you can reduce the overall processing time.\n\n2. **CPU-Intensive Operation**: The `complex_calculation` function includes a `time.sleep(0.001)` call, which\nunnecessarily delays the computation and can be removed.\n\n3. **Inefficient List Appending**: The line `all_data = all_data + processed` creates a new list each time, which is\ninefficient. Instead, use the `extend` method to add items to the list in place.\n\n4. **No Error Handling**: There is no error handling for the HTTP requests, which can lead to unexpected failures if a\nrequest fails.\n\n5. **No Caching Mechanism**: The code does not cache previously fetched data, which can lead to redundant requests if\nthe same data URL is processed multiple times.\n\nHere is the corrected code snippet:\n\n```python\nimport time\nimport requests\nfrom concurrent.futures import ThreadPoolExecutor\n\ndef process_large_dataset(data_urls):\nall_data = []\n\n# Asynchronous HTTP requests using ThreadPoolExecutor\nwith ThreadPoolExecutor(max_workers=5) as executor:\nfutures = {executor.submit(requests.get, url): url for url in data_urls}\nfor future in futures:\ntry:\nresponse = future.result()\ndata = response.json()\n\n# CPU-intensive operation on each item\nprocessed = [complex_calculation(item) for item in data]\n\n# Efficient list appending\nall_data.extend(processed)\nexcept requests.RequestException as e:\nprint(f\"Error fetching data from {futures[future]}: {e}\")\n\nreturn all_data\n\ndef complex_calculation(item):\n# Simulate an expensive calculation\nresult = item\nfor i in range(1000):\nresult = (result * i) / (i + 1) + result\n\nreturn result\n```\n\nThis version of the code uses `ThreadPoolExecutor` to make HTTP requests asynchronously, handles potential errors, and\nuses the `extend` method for efficient list appending. Additionally, you may want to implement a caching mechanism to\nstore previously fetched data and avoid redundant requests."
+						},
+						{
+							"name": "Successful Response - feat. Link + Local Python",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"import time\\nimport requests\\n\\ndef process_large_dataset(data_urls):\\n    # Process a list of data URLs inefficiently\\n    all_data = []\\n    \\n    # Inefficient: Making individual requests in a loop\\n    for url in data_urls:\\n        # No error handling\\n        response = requests.get(url)\\n        data = response.json()\\n        \\n        # CPU-intensive operation on each item\\n        processed = [complex_calculation(item) for item in data]\\n        \\n        # Appending to list inefficiently\\n        all_data = all_data + processed\\n    \\n    return all_data\\n\\ndef complex_calculation(item):\\n    # Simulate an expensive calculation\\n    result = item\\n    for i in range(1000):\\n        result = (result * i) / (i + 1) + result\\n        time.sleep(0.001)  # Unnecessary delay\\n    \\n    return result\\n\\n# No caching mechanism\\n# No resource cleanup\\n# No optimized data structures\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/checkCode",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"checkCode"
+									],
+									"query": [
+										{
+											"key": "workspace",
+											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": ":markdown\n```markdown\n# Code Organization and Style\n\n## Summary of Violations\nThe provided code snippet violates several best practices related to code organization and style. Specifically:\n\n1. **[GCI1](http://127.0.0.1:8000/ruleHelp/GCI1): Avoid calling Spring repositories inside loops or streams to reduce\nCPU and energy consumption.**\n- The code makes individual HTTP requests in a loop, which can be inefficient and consume unnecessary resources.\n\n2. **[GCI67](http://127.0.0.1:8000/ruleHelp/GCI67): Use the `$i++` variable during iteration to avoid temporary variable\ncreation.**\n- The code uses a list comprehension with a loop, but it does not explicitly show the use of `$i++`. However, the loop\ncan be optimized to avoid creating temporary variables.\n\n3. **[GCI72](http://127.0.0.1:8000/ruleHelp/GCI72): Perform SQL queries outside loops to leverage server\noptimizations.**\n- Although this rule is about SQL queries, the principle applies to making HTTP requests. The code makes requests inside\na loop, which can be optimized.\n\n4. **[GCI75](http://127.0.0.1:8000/ruleHelp/GCI75): Use `StringBuilder` for string concatenation in loops to save\nresources.**\n- While not directly applicable to the provided code, the concept of avoiding unnecessary operations in loops is\nrelevant.\n\n5. **[GCI79](http://127.0.0.1:8000/ruleHelp/GCI79): Implement `try-with-resources` for `AutoCloseable` objects to free\nresources.**\n- The code does not handle potential exceptions or resource cleanup, which can lead to resource leaks.\n\n6. **[GCI86](http://127.0.0.1:8000/ruleHelp/GCI86): Avoid calling `GC.Collect` as it generally consumes more resources\nthan it provides.**\n- Although not directly applicable, the code introduces an unnecessary delay (`time.sleep(0.001)`), which can be\navoided.\n\n7. **[GCI92](http://127.0.0.1:8000/ruleHelp/GCI92): Use `string.Length` instead of comparing strings to an empty string\nfor better performance and readability.**\n- While not directly applicable, the concept of avoiding unnecessary operations in loops is relevant.\n\n8. **[GCI93](http://127.0.0.1:8000/ruleHelp/GCI93): Return `Task` directly instead of a single `await` for optimized\ncode.**\n- Although not directly applicable, the concept of avoiding unnecessary operations in loops is relevant.\n\n9. **[GCI95](http://127.0.0.1:8000/ruleHelp/GCI95): Avoid querying unused SQL columns to optimize database\nperformance.**\n- Although not directly applicable, the principle of optimizing data retrieval is relevant.\n\n## Corrected Code Snippet\n\nTo address these issues, the code can be refactored as follows:\n\n```python\nimport requests\n\ndef process_large_dataset(data_urls):\n# Process a list of data URLs efficiently\nall_data = []\n\n# Efficient: Making individual requests in parallel\nresponses = [requests.get(url) for url in data_urls]\n\n# Process data in parallel\nfor response in responses:\ndata = response.json()\n\n# CPU-intensive operation on each item\nprocessed = [complex_calculation(item) for item in data]\n\n# Appending to list efficiently\nall_data.extend(processed)\n\nreturn all_data\n\ndef complex_calculation(item):\n# Simulate an expensive calculation\nresult = item\nfor i in range(1000):\nresult = (result * i) / (i + 1) + result\n\nreturn result\n\n# No caching mechanism\n# No resource cleanup\n# No optimized data structures\n```\n\n### Key Changes:\n1. **Parallel Requests:** The code now makes HTTP requests in parallel using a list comprehension, reducing the overall\nexecution time.\n2. **Efficient List Extension:** The `extend` method is used instead of concatenating lists, which is more efficient.\n3. **Removed Unnecessary Delay:** The `time.sleep(0.001)` delay has been removed to avoid unnecessary CPU usage.\n4. **Error Handling:** Although not implemented in the snippet, it is recommended to add error handling to manage\npotential network issues or invalid responses.\n\nBy addressing these issues, the code becomes more efficient and adheres to best practices in terms of performance and\nresource management.\njson\n{\n\"response\": \"The provided code snippet violates several best practices outlined in the given rules. Here's a breakdown\nof the issues and how to address them:\\n\\n1. **[GCI24](http://127.0.0.1:8000/ruleHelp/GCI24): Limit the number of\nreturned SQL results to optimize performance.**\\n - The code makes multiple HTTP requests in a loop, which can be\ninefficient if the dataset is large.\\n - **Solution:** Consider batching requests or using pagination if supported by\nthe API.\\n\\n2. **[GCI28](http://127.0.0.1:8000/ruleHelp/GCI28): Optimize file reading exceptions to handle errors\nefficiently.**\\n - There is no error handling for the HTTP requests, which can lead to unhandled exceptions.\\n -\n**Solution:** Add try-except blocks to handle potential network errors gracefully.\\n\\n3.\n**[GCI32](http://127.0.0.1:8000/ruleHelp/GCI32): Initialize builders/buffers with the appropriate size to avoid\nresizing.**\\n - The list `all_data` is being concatenated in a loop, which can lead to inefficient memory usage.\\n -\n**Solution:** Use a more efficient data structure like a list comprehension or `collections.deque` if dynamic sizing is\nnecessary.\\n\\n4. **[GCI35](http://127.0.0.1:8000/ruleHelp/GCI35): Use logical tests instead of `try...catch` for\n`FileNotFoundException` to save CPU cycles and RAM.**\\n - Although there is no direct file access, the absence of error\nhandling is similar in concept.\\n - **Solution:** Implement error checks before making requests to avoid unnecessary\nprocessing.\\n\\n5. **[GCI522](http://127.0.0.1:8000/ruleHelp/GCI522): Avoid overriding brightness settings to conserve\nbattery life.**\\n - The code includes a `time.sleep(0.001)` call, which can unnecessarily delay execution.\\n -\n**Solution:** Remove the sleep call unless it is genuinely needed for the application logic.\\n\\nHere's a revised version\nof the code addressing these issues:\\n\\n```python\\nimport requests\\nfrom collections import deque\\n\\ndef\nprocess_large_dataset(data_urls):\\n all_data = deque()\\n \\n for url in data_urls:\\n try:\\n response =\nrequests.get(url)\\n response.raise_for_status() # Check for HTTP errors\\n data = response.json()\\n \\n processed =\n[complex_calculation(item) for item in data]\\n all_data.extend(processed)\\n except requests.exceptions.RequestException\nas e:\\n print(f\\\"Error fetching {url}: {e}\\\")\\n \\n return list(all_data)\\n\\ndef complex_calculation(item):\\n result =\nitem\\n for i in range(1000):\\n result = (result * i) / (i + 1) + result\\n \\n return result\\n```\\n\\nThis revised code\nincludes error handling, uses a more efficient data structure (`deque`), and removes unnecessary delays.\"\n}\n```\nmarkdown\n# [GCI24](http://127.0.0.1:8000/ruleHelp/GCI24): Limit the number of returned SQL results to optimize performance\nThe code makes multiple HTTP requests in a loop, which can be inefficient if the dataset is large. To address this,\nconsider batching requests or using pagination if supported by the API.\n\n# [GCI28](http://127.0.0.1:8000/ruleHelp/GCI28): Optimize file reading exceptions to handle errors efficiently\nThere is no error handling for the HTTP requests, which can lead to unhandled exceptions. To address this, add\ntry-except blocks to handle potential network errors gracefully.\n\n# [GCI32](http://127.0.0.1:8000/ruleHelp/GCI32): Initialize builders/buffers with the appropriate size to avoid resizing\nThe list `all_data` is being concatenated in a loop, which can lead to inefficient memory usage. To address this, use a\nmore efficient data structure like `collections.deque` if dynamic sizing is necessary.\n\n# [GCI35](http://127.0.0.1:8000/ruleHelp/GCI35): Use logical tests instead of `try...catch` for `FileNotFoundException`\nto save CPU cycles and RAM\nAlthough there is no direct file access, the absence of error handling is similar in concept. To address this, implement\nerror checks before making requests to avoid unnecessary processing.\n\n# [GCI522](http://127.0.0.1:8000/ruleHelp/GCI522): Avoid overriding brightness settings to conserve battery life\nThe code includes a `time.sleep(0.001)` call, which can unnecessarily delay execution. To address this, remove the sleep\ncall unless it is genuinely needed for the application logic.\n\nHere's a revised version of the code addressing these issues:\n\n```python\nimport requests\nfrom collections import deque\n\ndef process_large_dataset(data_urls):\nall_data = deque()\n\nfor url in data_urls:\ntry:\nresponse = requests.get(url)\nresponse.raise_for_status() # Check for HTTP errors\ndata = response.json()\n\nprocessed = [complex_calculation(item) for item in data]\nall_data.extend(processed)\nexcept requests.exceptions.RequestException as e:\nprint(f\"Error fetching {url}: {e}\")\n\nreturn list(all_data)\n\ndef complex_calculation(item):\nresult = item\nfor i in range(1000):\nresult = (result * i) / (i + 1) + result\n\nreturn result\n```\n\nThis revised code includes error handling, uses a more efficient data structure (`deque`), and removes unnecessary\ndelays. ## Expression and Statements\nThe provided code snippet violates several best practices related to expression and statements. Specifically:\n\n- **Inefficient Looping**: The function `process_large_dataset` makes individual HTTP requests within a loop, which can\nbe resource-intensive and slow down performance.\n- **Lack of Error Handling**: There is no error handling for the HTTP requests, which can lead to unhandled exceptions\nand crashes.\n- **CPU-Intensive Operations**: The `complex_calculation` function performs an expensive calculation with a unnecessary\ndelay (`time.sleep(0.001)`), which can consume a lot of CPU resources.\n- **Appending Lists Inefficiently**: The code uses `all_data = all_data + processed`, which is an inefficient way to\nappend lists in Python. Instead, using `all_data.extend(processed)` is more efficient.\n\nTo address these issues, consider the following improvements:\n\n- Use a more efficient method to handle HTTP requests, such as concurrent requests or batching.\n- Implement proper error handling for HTTP requests.\n- Remove unnecessary delays in CPU-intensive operations.\n- Use `extend` instead of concatenation to append lists.\n\nHere is a revised version of the code with some of these improvements:\n\n```python\nimport time\nimport requests\nfrom concurrent.futures import ThreadPoolExecutor\n\ndef process_large_dataset(data_urls):\nall_data = []\n\n# Using ThreadPoolExecutor to make concurrent requests\nwith ThreadPoolExecutor(max_workers=5) as executor:\nfutures = [executor.submit(requests.get, url) for url in data_urls]\nfor future in futures:\nresponse = future.result()\ndata = response.json()\nprocessed = [complex_calculation(item) for item in data]\nall_data.extend(processed)\n\nreturn all_data\n\ndef complex_calculation(item):\nresult = item\nfor i in range(1000):\nresult = (result * i) / (i + 1) + result\n# Removed unnecessary delay\n\nreturn result\n```\n\nThis revised code uses `ThreadPoolExecutor` to make concurrent HTTP requests, which can significantly improve\nperformance when dealing with multiple URLs. Additionally, it removes the unnecessary delay in the `complex_calculation`\nfunction and uses `extend` to append lists more efficiently.\n# Others\n\n## Summary of Rules Violated\n\nThe provided code snippet violates several rules aimed at enhancing performance and reducing computational overhead:\n\n1. **[GCI11](http://127.0.0.1:8000/ruleHelp/GCI11): Limit multiple accesses to the same DOM element to enhance\nperformance.**\n- **Issue:** The code does not interact with the DOM, so this rule is not applicable.\n\n2. **[GCI12](http://127.0.0.1:8000/ruleHelp/GCI12): Batch multiple style changes to reduce computational overhead.**\n- **Issue:** The code does not perform any style changes, so this rule is not applicable.\n\n3. **[GCI13](http://127.0.0.1:8000/ruleHelp/GCI13): Prefer API collections with pagination for efficient data\nhandling.**\n- **Issue:** The code processes data from multiple URLs without batching or pagination, which can lead to inefficient\nhandling of large datasets.\n\n4. **[GCI5](http://127.0.0.1:8000/ruleHelp/GCI5): Use `preparedStatement` instead of `Statement` to optimize SQL\nqueries.**\n- **Issue:** The code does not interact with a database, so this rule is not applicable.\n\n5. **[GCI7](http://127.0.0.1:8000/ruleHelp/GCI7): Rewrite native getters/setters to improve performance.**\n- **Issue:** The code does not use native getters/setters, so this rule is not applicable.\n\n### Recommendations\n\n1. **Batch Requests:** Instead of making individual HTTP requests in a loop, consider using batch requests or parallel\nprocessing to reduce the number of network calls.\n2. **Error Handling:** Implement error handling to manage failed requests gracefully.\n3. **Efficient Data Processing:** Use more efficient data structures and algorithms to reduce the computational load\nduring data processing.\n4. **Remove Unnecessary Delays:** Remove unnecessary delays such as `time.sleep(0.001)` within the `complex_calculation`\nfunction to improve performance.\n5. **Caching Mechanism:** Implement a caching mechanism to avoid reprocessing data that has already been fetched.\n\n## Corrected Code Snippet\n\n```python\nimport requests\nfrom concurrent.futures import ThreadPoolExecutor\n\ndef process_large_dataset(data_urls):\nall_data = []\n\n# Using ThreadPoolExecutor to make batch requests\nwith ThreadPoolExecutor(max_workers=5) as executor:\nfutures = {executor.submit(requests.get, url): url for url in data_urls}\nfor future in futures:\ntry:\nresponse = future.result()\ndata = response.json()\nprocessed = [complex_calculation(item) for item in data]\nall_data.extend(processed)\nexcept requests.RequestException as e:\nprint(f\"Failed to fetch data from {futures[future]}: {e}\")\n\nreturn all_data\n\ndef complex_calculation(item):\nresult = item\nfor i in range(1000):\nresult = (result * i) / (i + 1) + result\nreturn result\n```\n\n### Explanation of Changes\n\n1. **ThreadPoolExecutor:** Used to make batch requests concurrently, reducing the overall time taken to fetch data from\nmultiple URLs.\n2. **Error Handling:** Added a try-except block to handle potential request exceptions.\n3. **Removed Unnecessary Delay:** Removed the `time.sleep(0.001)` call to improve the performance of the\n`complex_calculation` function.\n4. **Efficient List Extension:** Used `all_data.extend(processed)` instead of `all_data = all_data + processed` for more\nefficient list concatenation."
+						},
+						{
+							"name": "Successful Response - SQL",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n  \"code\": \"-- Inefficient SQL query that returns all columns and doesn't use indexes\\nSELECT *\\nFROM users\\nJOIN orders ON users.id = orders.user_id\\nJOIN order_items ON orders.id = order_items.order_id\\nJOIN products ON order_items.product_id = products.id\\nWHERE users.last_login > '2023-01-01'\\n\\n-- No query optimization\\n-- No selective column fetching\\n-- No proper indexing strategy mentioned\\n-- Potentially fetching large result set without pagination\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/checkCode",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"checkCode"
+									],
+									"query": [
+										{
+											"key": "workspace",
+											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.1.3 Python/3.10.17"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 May 2025 08:34:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6598"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": " ```markdown\n# Code structure and methods\n\nThe provided SQL query violates several rules related to code structure and methods:\n\n- **CRJVM206 Avoid N+1 selects problem by batching queries or using joins**: Although the query uses joins, it might still lead to inefficiencies if not properly optimized.\n- **GCI72 Perform SQL queries outside loops to optimize database operations**: The query is already outside a loop, but it could be further optimized.\n- **GCI74 Specify fields in SQL queries instead of using SELECT ***: The query uses `SELECT *`, which fetches all columns and can be inefficient.\n- **GCI13 Prefer API collections with pagination to handle large datasets efficiently**: While the query itself does not involve pagination, the application logic should consider using pagination when handling large datasets.\n\n### Summary\n\nTo optimize the SQL query, you should specify only the necessary fields instead of using `SELECT *`. Additionally, ensure that the database schema includes proper indexing on the columns used in the `JOIN` conditions and the `WHERE` clause to improve query performance. If the result set is large, consider implementing pagination in your application logic to handle it efficiently.\n\n### Corrected Code Snippet\n\n```sql\nSELECT users.id, users.username, orders.id AS order_id, order_items.product_id, products.name\nFROM users\nJOIN orders ON users.id = orders.user_id\nJOIN order_items ON orders.id = order_items.order_id\nJOIN products ON order_items.product_id = products.id\nWHERE users.last_login > '2023-01-01'\n```\n\nIn this corrected version, only specific fields are selected, which reduces the amount of data fetched from the database. Make sure to adjust the fields according to your actual requirements. Additionally, ensure that the database has appropriate indexes on the columns involved in the joins and the where clause.\n\n# Runtime optimizations\n\nThe provided SQL query does not follow best practices for runtime optimizations. Specifically:\n\n- **GCI24 Limit returned SQL results to reduce CPU and RAM usage**: The query uses `SELECT *`, which retrieves all columns from the joined tables. This can lead to high CPU and RAM usage, especially if the tables contain many columns or large amounts of data.\n- **No proper indexing strategy mentioned**: The query does not utilize any indexes on the columns used for joining and filtering (`users.id`, `orders.user_id`, `order_items.order_id`, `order_items.product_id`, `users.last_login`). Indexes can significantly speed up query execution by reducing the amount of data the database needs to scan.\n- **Potentially fetching large result set without pagination**: The query does not include any pagination or limit clause, which means it could potentially return a very large result set. Fetching only the necessary data at a time can help manage resources more efficiently.\n\nTo optimize this query, consider the following improvements:\n\n1. **Select only necessary columns**: Instead of using `SELECT *`, specify only the columns you need. For example, if you only need the user's name and the product details, you could modify the query as follows:\n   ```sql\n   SELECT users.name, products.product_name, products.price\n   FROM users\n   JOIN orders ON users.id = orders.user_id\n   JOIN order_items ON orders.id = order_items.order_id\n   JOIN products ON order_items.product_id = products.id\n   WHERE users.last_login > '2023-01-01';\n   ```\n\n2. **Add indexes to relevant columns**: Ensure that there are indexes on the columns used for joining and filtering. For instance, you might add indexes to `users.id`, `orders.user_id`, `order_items.order_id`, and `order_items.product_id`. Here’s how you could create these indexes:\n   ```sql\n   CREATE INDEX idx_users_id ON users(id);\n   CREATE INDEX idx_orders_user_id ON orders(user_id);\n   CREATE INDEX idx_order_items_order_id ON order_items(order_id);\n   CREATE INDEX idx_order_items_product_id ON order_items(product_id);\n   ```\n\n3. **Implement pagination**: If the result set is expected to be large, consider adding a `LIMIT` clause to fetch only a subset of the data at a time. You could also use `OFFSET` to paginate through the results. For example:\n   ```sql\n   SELECT users.name, products.product_name, products.price\n   FROM users\n   JOIN orders ON users.id = orders.user_id\n   JOIN order_items ON orders.id = order_items.order_id\n   JOIN products ON order_items.product_id = products.id\n   WHERE users.last_login > '2023-01-01'\n   LIMIT 100 OFFSET 0;\n   ```\n\nBy implementing these changes, you can reduce the CPU and RAM usage associated with the query and improve the overall efficiency of your application.\n\n# Storage and better db retrieval\n\nThe provided SQL query violates the following rules:\n\n- **GCI74 Specify fields in SQL queries instead of using SELECT * to improve performance.**\n  - The query uses `SELECT *`, which fetches all columns from the tables involved. This approach can lead to inefficient data retrieval and increased CPU and RAM usage because the database has to transfer more data than necessary.\n\n- **GCI24 Limit returned SQL results to reduce CPU and RAM usage.**\n  - The query does not limit the number of results returned, which can be problematic if the dataset is large. Returning too many rows at once can strain the database server's resources and slow down the application.\n\n### Summary\n\nTo optimize this query, specify only the necessary fields and consider adding pagination or limiting the result set size. Here is an example of how you might rewrite the query to include specific fields and a limit clause:\n\n```sql\nSELECT users.id, users.username, orders.order_date, order_items.quantity, products.name\nFROM users\nJOIN orders ON users.id = orders.user_id\nJOIN order_items ON orders.id = order_items.order_id\nJOIN products ON order_items.product_id = products.id\nWHERE users.last_login > '2023-01-01'\nLIMIT 100;  -- Adjust the limit as needed\n```\n\nThis revised query fetches only the relevant fields and limits the result set to 100 rows, which can help improve performance and resource usage. If you need to retrieve more rows, consider implementing pagination to fetch smaller chunks of data at a time.\n\n# Others\n\nThe provided code snippet is an SQL query, and it does not involve the use of vector images or any image formats like SVG. Therefore, the rules GCI10 (Use unoptimized vector images to reduce bandwidth) and GCI203 (Use SVG format images over other formats when possible) do not apply to this code.\n\nIf you have any other code or need assistance with optimizing SQL queries, feel free to ask!\n```"
+						},
+						{
+							"name": "Successful Response - JS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"function processData(data) {\\n  // This function processes a large dataset without any optimization\\n  let results = [];\\n  \\n  // Inefficient loop with nested operations\\n  for (let i = 0; i < data.length; i++) {\\n    // CPU-intensive operation inside loop\\n    let transformed = complexTransformation(data[i]);\\n    \\n    // Multiple DOM updates inside loop\\n    document.getElementById('results').innerHTML += transformed;\\n    \\n    // Unnecessary API call inside loop\\n    fetch('https://api.example.com/process', {\\n      method: 'POST',\\n      body: JSON.stringify({ item: transformed })\\n    });\\n    \\n    results.push(transformed);\\n  }\\n  \\n  return results;\\n}\\n\\nfunction complexTransformation(item) {\\n  // Simulating a computationally expensive operation\\n  let result = item;\\n  for (let i = 0; i < 1000; i++) {\\n    result = Math.sqrt((result * i) / (i + 1)) + result;\\n  }\\n  return result;\\n}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/checkCode",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"checkCode"
+									],
+									"query": [
+										{
+											"key": "workspace",
+											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/html",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "# Code structure and methods\n\n## Summary of Rules Violated\n\nThe provided code snippet violates several rules aimed at improving code performance and resource management:\n\n1. **GCI1**: Calling Spring repositories inside loops or streams is avoided, but here we see an unnecessary API call inside a loop.\n2. **GCI11**: Limiting multiple accesses to the same DOM element is crucial, but the code performs multiple DOM updates inside a loop.\n3. **GCI22**: Using basic operations directly instead of methods is recommended, but the code uses a computationally expensive transformation inside a loop.\n4. **GCI65**: Using single quotes for strings without variables can reduce CPU cycles, but this rule does not apply here as there are no string literals to optimize.\n5. **GCI67**: Using `++$i` instead of `$i++` can be faster, but this rule also does not apply here since there is no increment operation in the loop condition.\n\n## Recommendations\n\nTo optimize the code, consider the following improvements:\n\n1. **Batch API Calls**: Instead of making an API call for each item, batch multiple items into a single request.\n2. **Limit DOM Updates**: Perform all DOM updates after processing the entire dataset to reduce the number of reflows and repaints.\n3. **Optimize Transformations**: If possible, move the transformation logic outside the loop or optimize it to reduce computational overhead.\n\n## Corrected Code Snippet\n\n```javascript\nasync function processData(data) {\n  let results = [];\n  let transformedData = [];\n\n  // Efficiently transform the data outside the loop\n  for (let i = 0; i < data.length; i++) {\n    transformedData.push(complexTransformation(data[i]));\n  }\n\n  // Batch API calls\n  let batchData = transformedData.map(item => ({ item: item }));\n  let response = await fetch('https://api.example.com/process', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify(batchData)\n  });\n\n  // Update the DOM once after processing all data\n  document.getElementById('results').innerHTML = transformedData.join('');\n\n  return transformedData;\n}\n\nfunction complexTransformation(item) {\n  // Simulating a computationally expensive operation\n  let result = item;\n  for (let i = 0; i < 1000; i++) {\n    result = Math.sqrt((result * i) / (i + 1)) + result;\n  }\n  return result;\n}\n```\n\nThis corrected version batches the API calls and limits DOM updates to once after processing all data, which should improve performance significantly.\n# Runtime Optimizations\n\n## Summary of Rules Violated:\n- **GCI5**: The use of `Statement` (implied by concatenating strings directly into `innerHTML`) is inefficient compared to using `preparedStatement`.\n- **GCI24**: The function processes all items in the dataset, potentially returning a large number of results, which can increase CPU and RAM usage.\n- **GCI29**: There is no indication of CSS animations, but the multiple DOM updates inside the loop can be resource-intensive.\n- **GCI404**: The use of list comprehensions is not applicable here since the code uses a traditional for loop.\n- **GCI522**: Brightness settings are not being overridden in this code snippet.\n- **GCI523**: Geolocation is not being used in this code snippet.\n- **GCI530**: Torch mode is not being turned on in this code snippet.\n- **Use of official social media sharing buttons**: Social media sharing is not being used in this code snippet.\n- **Grouping similar CSS declarations together**: Not applicable as there is no CSS code in this snippet.\n- **Prefer standard fonts**: Not applicable as there is no font usage in this snippet.\n- **Outsourcing CSS and JavaScript to external files**: Not applicable as there is no CSS or JavaScript file handling in this snippet.\n- **Resizing images browser-side**: Not applicable as there is no image processing in this snippet.\n- **Avoiding modifying the DOM during traversal**: The code modifies the DOM multiple times inside the loop, which is resource-intensive.\n- **Using logical property changes to make DOM elements invisible efficiently**: Not applicable as there is no need to make elements invisible in this snippet.\n\n## Corrected Code Snippet:\n\n```javascript\nfunction processData(data) {\n  // This function processes a large dataset with optimizations\n  let results = [];\n  let transformedData = [];\n\n  // Efficient loop with minimal DOM updates\n  for (let i = 0; i < data.length; i++) {\n    // CPU-intensive operation inside loop\n    let transformed = complexTransformation(data[i]);\n    transformedData.push(transformed);\n  }\n\n  // Batch update to the DOM\n  document.getElementById('results').innerHTML = transformedData.join('');\n\n  // Reduce API calls by batching them\n  fetch('https://api.example.com/process', {\n    method: 'POST',\n    body: JSON.stringify({ items: transformedData })\n  });\n\n  return transformedData;\n}\n\nfunction complexTransformation(item) {\n  // Simulating a computationally expensive operation\n  let result = item;\n  for (let i = 0; i < 1000; i++) {\n    result = Math.sqrt((result * i) / (i + 1)) + result;\n  }\n  return result;\n}\n```\n\n### Explanation of Changes:\n1. **Batch DOM Updates**: Instead of updating the DOM inside the loop, we collect all transformed data in an array and then update the DOM once after the loop completes.\n2. **Batch API Calls**: We batch all API calls into a single request after processing the entire dataset, reducing the number of network requests.\n3. **Avoiding Resource-Intensive Operations Inside Loops**: By collecting transformed data first and then performing batch updates, we minimize the resource-intensive operations inside the loop.\n\nThese changes should help reduce CPU and RAM usage, making the function more efficient.\n# Storage and better db retrieval\n\n**Rules Violated:**\n- **CRJVM205 Use FetchType LAZY for collections on JPA entities to avoid loading unnecessary resources.** - The code snippet provided does not contain any JPA entity collections that could benefit from lazy fetching. This rule is not applicable here.\n- **CRJVM206 Avoid N+1 selects problem by batching queries or using joins.** - The code snippet provided does not contain any database queries or entity relationships that would lead to an N+1 selects problem. This rule is not applicable here.\n- **GCI24 Limit returned SQL results to reduce CPU and RAM usage.** - The code snippet provided does not contain any SQL queries. This rule is not applicable here.\n- **GCI72 Perform SQL queries outside loops to optimize database operations.** - The code snippet provided does not contain any SQL queries. This rule is not applicable here.\n- **GCI74 Specify fields in SQL queries instead of using SELECT * to improve performance.** - The code snippet provided does not contain any SQL queries. This rule is not applicable here.\n\n**Summary:**\nThe provided code snippet does not involve any database operations or JPA entities. Therefore, none of the rules under the \"Storage and better db retrieval\" category are applicable to this code. If you have any database-related code, please ensure you follow these best practices to optimize performance.\n\n**Corrected Code Snippet:**\nSince there are no applicable rules for this code snippet, no corrections are necessary. However, here is a refactored version of the code to improve efficiency and readability:\n\n```javascript\nfunction processData(data) {\n  // This function processes a large dataset more efficiently\n  let results = [];\n  let transformedData = data.map(complexTransformation);\n\n  // Batch DOM updates\n  let resultsContainer = document.getElementById('results');\n  resultsContainer.innerHTML = transformedData.join('');\n\n  // Batch API calls\n  Promise.all(\n    transformedData.map(item => \n      fetch('https://api.example.com/process', {\n        method: 'POST',\n        body: JSON.stringify({ item: item })\n      })\n    )\n  ).then(responses => {\n    return Promise.all(responses.map(response => response.json()));\n  }).then(data => {\n    console.log('API responses:', data);\n  });\n\n  return transformedData;\n}\n\nfunction complexTransformation(item) {\n  // Simulating a computationally expensive operation\n  let result = item;\n  for (let i = 0; i < 1000; i++) {\n    result = Math.sqrt((result * i) / (i + 1)) + result;\n  }\n  return result;\n}\n```\n\n**Explanation:**\n- **CPU-intensive operation inside loop:** The `complexTransformation` function is called for each item in the dataset. To optimize, we use the `map` function to transform all items at once.\n- **Multiple DOM updates inside loop:** Instead of updating the DOM in each iteration, we batch all updates into a single operation using `join` to concatenate the transformed data.\n- **Unnecessary API call inside loop:** We use `Promise.all` to batch all API calls together, reducing the number of network requests and improving overall performance.\n# Others\n\n## Summary of Rules Violated\nThe provided code snippet violates several best practices under the \"Others\" category:\n\n1. **Unoptimized Vector Images**: Although there is no direct use of images in the code, the inefficiency in processing data can be seen as a form of unoptimized data handling. The nested operations and multiple DOM updates inside the loop can lead to performance issues, similar to how unoptimized vector images would increase bandwidth usage.\n\n2. **Use SVG Format Images Over Other Formats When Possible**: This rule is applicable to image usage, but since there are no images in the code, it is not directly relevant here. However, the inefficient data processing can indirectly impact performance, similar to how using non-SVG formats for images would.\n\nTo improve the performance and adhere to these guidelines, consider the following optimizations:\n\n- **Avoid CPU-intensive Operations Inside Loops**: Move the `complexTransformation` function outside the loop or optimize it to reduce its computational load.\n- **Minimize DOM Updates Inside Loops**: Instead of updating the DOM in every iteration, accumulate the results and update it once after the loop completes.\n- **Batch API Calls Instead of Making Multiple Calls Inside Loops**: Collect all the transformed data and make a single API call with the batch data.\n\nHere is the corrected code snippet:\n\n```javascript\nfunction processData(data) {\n  // This function processes a large dataset with optimizations\n  let results = [];\n  let domUpdates = [];\n  let apiCalls = [];\n\n  // Efficient loop with minimal operations\n  for (let i = 0; i < data.length; i++) {\n    // CPU-intensive operation outside loop\n    let transformed = complexTransformation(data[i]);\n\n    // Accumulate DOM updates\n    domUpdates.push(transformed);\n\n    // Accumulate API calls\n    apiCalls.push({ item: transformed });\n  }\n\n  // Update DOM once\n  document.getElementById('results').innerHTML = domUpdates.join('');\n\n  // Batch API call\n  fetch('https://api.example.com/process', {\n    method: 'POST',\n    body: JSON.stringify(apiCalls)\n  });\n\n  return results;\n}\n\nfunction complexTransformation(item) {\n  // Simulating a computationally expensive operation\n  let result = item;\n  for (let i = 0; i < 1000; i++) {\n    result = Math.sqrt((result * i) / (i + 1)) + result;\n  }\n  return result;\n}\n```\n\nThis optimized version reduces the number of DOM updates and API calls, making the data processing more efficient.\n"
+						},
+						{
+							"name": "Bad Request - no snippet provided",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/checkCode",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"checkCode"
+									],
+									"query": [
+										{
+											"key": "workspace",
+											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html>\n<html lang=en>\n<title>500 Internal Server Error</title>\n<h1>Internal Server Error</h1>\n<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or\n    there is an error in the application.</p>"
+						},
+						{
+							"name": "Malformed Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cofe\": \"function processData(data) {\\n  // This function processes a large dataset without any optimization\\n  let results = [];\\n  \\n  // Inefficient loop with nested operations\\n  for (let i = 0; i < data.length; i++) {\\n    // CPU-intensive operation inside loop\\n    let transformed = complexTransformation(data[i]);\\n    \\n    // Multiple DOM updates inside loop\\n    document.getElementById('results').innerHTML += transformed;\\n    \\n    // Unnecessary API call inside loop\\n    fetch('https://api.example.com/process', {\\n      method: 'POST',\\n      body: JSON.stringify({ item: transformed })\\n    });\\n    \\n    results.push(transformed);\\n  }\\n  \\n  return results;\\n}\\n\\nfunction complexTransformation(item) {\\n  // Simulating a computationally expensive operation\\n  let result = item;\\n  for (let i = 0; i < 1000; i++) {\\n    result = Math.sqrt((result * i) / (i + 1)) + result;\\n  }\\n  return result;\\n}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/checkCode",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"checkCode"
+									],
+									"query": [
+										{
+											"key": "workspace",
+											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html>\n<html lang=en>\n<title>500 Internal Server Error</title>\n<h1>Internal Server Error</h1>\n<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or\n    there is an error in the application.</p>"
+						}
+					]
+				},
+				{
+					"name": "Get rules catalogue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/getRules/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getRules",
+								"all"
+							]
+						},
+						"description": "Gets information about a collection. For a complete list of this endpoint's possible values, use the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json)."
+					},
+					"response": [
+						{
+							"name": "Successful Response - all",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/getRules/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"getRules",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Code structure and methods\": [\n        \"CRJVM205 Use FetchType LAZY for collections on JPA entities to avoid loading unnecessary resources.\",\n        \"CRJVM206 Avoid N+1 selects problem by batching queries or using joins.\",\n        \"GCI1 Avoid calling Spring repositories inside loops or streams to reduce CPU and energy consumption.\",\n        \"GCI2 Prefer switch statements over multiple if-else for better performance.\",\n        \"GCI3 Fetch the size of collections outside loops to save CPU cycles.\",\n        \"GCI4 Pass useful variables as arguments to routines to avoid global variable checks.\",\n        \"GCI7 Rewrite native getters/setters to improve performance.\",\n        \"GCI9 Avoid importing everything from libraries to prevent unnecessary imports.\",\n        \"GCI11 Limit multiple accesses to the same DOM element to enhance performance.\",\n        \"GCI12 Batch multiple style changes to optimize rendering.\",\n        \"GCI13 Prefer API collections with pagination to handle large datasets efficiently.\",\n        \"GCI22 Use basic operations directly instead of methods to save resources.\",\n        \"GCI25 Ensure images have a valid source attribute to avoid broken links.\",\n        \"GCI26 Use shorthand CSS notations to minimize stylesheet size.\",\n        \"GCI27 Use system.arraycopy for efficient array copying.\",\n        \"GCI28 Optimize read file exceptions to handle errors gracefully.\",\n        \"GCI30 Provide print stylesheets for better print quality.\",\n        \"GCI31 Use lighter image formats to reduce bandwidth.\",\n        \"GCI32 Initialize builders/buffers with the appropriate size to avoid resizing.\",\n        \"GCI35 Use logical tests instead of try...catch for FileNotFoundException to save CPU cycles.\",\n        \"GCI36 Avoid autoplay for video and audio content to conserve energy.\",\n        \"GCI66 Use single quotes for strings without variables to reduce CPU cycles.\",\n        \"GCI67 Use ++$i instead of $i++ for faster iteration.\",\n        \"GCI69 Avoid calling loop invariant functions in loop conditions to save CPU cycles.\",\n        \"GCI72 Perform SQL queries outside loops to optimize database operations.\",\n        \"GCI74 Specify fields in SQL queries instead of using SELECT * to improve performance.\",\n        \"GCI75 Use StringBuilder instead of string concatenation in loops to save resources.\",\n        \"GCI76 Avoid static collections to prevent memory leaks.\",\n        \"GCI77 Use Pattern.compile() in static contexts to optimize performance.\",\n        \"GCI78 Include const parameters in the query instead of setting them in batch updates.\",\n        \"GCI79 Implement try-with-resources for AutoCloseable objects to free resources.\",\n        \"GCI81 Specify struct layouts to optimize memory usage.\",\n        \"GCI82 Declare variables as constants when they are not reassigned.\",\n        \"GCI83 Replace Enum ToString() with nameof for better performance.\",\n        \"GCI84 Use async Task methods instead of async void for performance, stability, and testability.\",\n        \"GCI85 Seal types that don't need inheritance to improve performance.\",\n        \"GCI86 Avoid calling GC.Collect to prevent unnecessary overhead.\",\n        \"GCI87 Use collection indexers instead of Linq for efficient access.\",\n        \"GCI88 Dispose resources asynchronously for better performance.\",\n        \"GCI89 Limit function cache size to prevent storing unlimited data.\",\n        \"GCI90 Use `Cast` instead of `Select` for casting collections.\",\n        \"GCI91 Use `Where` before `OrderBy` to filter elements first.\",\n        \"GCI92 Use string.Length to check if a string is empty for better performance.\",\n        \"GCI93 Consider returning a `Task` directly instead of a single `await`.\"\n    ],\n    \"Others\": [\n        \"GCI10 Use unoptimized vector images to reduce bandwidth.\",\n        \"GCI203 Use SVG format images over other formats when possible.\"\n    ],\n    \"Runtime optimizations\": [\n        \"CRJVM207 Ensure customer data includes end-of-life information for accurate management.\",\n        \"GCI5 Use preparedStatement instead of Statement to reduce CPU and energy consumption.\",\n        \"GCI24 Limit returned SQL results to reduce CPU and RAM usage.\",\n        \"GCI29 Avoid CSS animations to reduce unnecessary energy consumption.\",\n        \"GCI404 Use generator comprehensions instead of list comprehensions in for loop declarations.\",\n        \"GCI522 Avoid overriding brightness settings to conserve battery life.\",\n        \"GCI523 Use minimum time for geolocation to save power.\",\n        \"GCI530 Avoid turning on the torch mode programmatically to conserve energy.\",\n        \"Use official social media sharing buttons to reduce resource-intensive JavaScript plugins.\",\n        \"Group similar CSS declarations together to reduce CSS weight.\",\n        \"Prefer standard fonts to save bandwidth and improve load times.\",\n        \"Outsource CSS and JavaScript to external files to reduce data transmission.\",\n        \"Resize images browser-side to avoid unnecessary bandwidth and CPU usage.\",\n        \"Avoid modifying the DOM during traversal to prevent resource-intensive loops.\",\n        \"Use logical property changes to make DOM elements invisible efficiently.\"\n    ],\n    \"Storage and better db retrieval\": [\n        \"CRJVM205 Use FetchType LAZY for collections on JPA entities to avoid loading unnecessary resources.\",\n        \"CRJVM206 Avoid N+1 selects problem by batching queries or using joins.\",\n        \"GCI24 Limit returned SQL results to reduce CPU and RAM usage.\",\n        \"GCI72 Perform SQL queries outside loops to optimize database operations.\",\n        \"GCI74 Specify fields in SQL queries instead of using SELECT * to improve performance.\"\n    ]\n}"
+						},
+						{
+							"name": "Successful Response - category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/getRules/Declaration",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"getRules",
+										"Declaration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"CRJVM????: Avoid joining on non-indexed columns in persistence Java.\",\n    \"GCI22: Use basic operations directly instead of methods to save resources.\",\n    \"GCI24: Limit the number of returned SQL results to optimize performance.\",\n    \"GCI25: Ensure images have a valid source attribute to avoid unnecessary processing.\",\n    \"GCI26: Use shorthand CSS notations to minimize stylesheet size.\",\n    \"GCI27: Use `system.arraycopy` for copying arrays to optimize performance.\",\n    \"GCI28: Optimize file reading exceptions to handle errors efficiently.\",\n    \"GCI29: Avoid CSS animations to reduce energy consumption.\",\n    \"GCI30: Provide print stylesheets to ensure proper printing.\",\n    \"GCI31: Use lighter image formats to save bandwidth.\",\n    \"GCI32: Initialize builders/buffers with the appropriate size to avoid resizing.\",\n    \"GCI35: Use logical tests instead of `try...catch` for `FileNotFoundException` to save CPU cycles and RAM.\",\n    \"GCI36: Avoid autoplay for video and audio content to conserve energy.\",\n    \"GCI522: Avoid overriding brightness settings to conserve battery life.\",\n    \"GCI523: Use minimum precision for geolocation to reduce power consumption.\",\n    \"GCI530: Avoid turning on the torch mode programmatically to save energy.\"\n]"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/getRules/Runtime optimus prime",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"getRules",
+										"Runtime optimus prime"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"details\": \"Group called Runtime optimus prime not found in catalogue. You can use GET /getRules/all to see all rules.\",\n    \"message\": \"Category of rules called Runtime optimus prime not found\",\n    \"status_code\": 404\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh Rules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/refreshRules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"refreshRules"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh Rules - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/refreshRules",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"refreshRules"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Refresh Rules - LLM exceeded token limit please retry",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/refreshRules",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"refreshRules"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status_code\": 500,\r\n    \"message\": \"Encountered error while refreshing catalogue. Please retry: error message\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Local hosted rule html",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/ruleHelp/GCI28",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"ruleHelp",
+								"GCI28"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Response - Typescript",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/ruleHelp/GCI13",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"ruleHelp",
+										"GCI13"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Bad Request - Rule doesn't exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/ruleHelp/GCI15",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"ruleHelp",
+										"GCI15"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "The `/collections` endpoints let you manage your [collections](https://learning.postman.com/docs/sending-requests/intro-to-collections/)."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://farming-simulator.pstmn.io"
+		}
+	]
+}
